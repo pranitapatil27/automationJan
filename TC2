@@ -1,0 +1,61 @@
+package collection1;
+
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.Vector;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+Vector v = new Vector();
+		
+		System.out.println(v.capacity());  //10
+		System.out.println(v.isEmpty());     //true
+		System.out.println(v.size());			//0
+		
+		v.add("abc");
+		v.add(20);
+		v.add('C');
+		v.add(null);
+		v.add("abc");		
+		
+		System.out.println(v.size());
+		
+		
+		System.out.println("----------Added Elements--------");
+		System.out.println(v);
+		System.out.println(v.indexOf("abc"));    //0
+		System.out.println(v.get(3));            //null
+		System.out.println(v.lastIndexOf("abc"));  //4
+		System.out.println(v.contains('X'));    //false
+		v.add(3, "xyz");
+		System.out.println(v);
+		
+		v.set(3, "aaaaaa");
+		System.out.println(v);
+		v.remove(3);
+		
+		System.out.println(v);	
+
+		System.out.println("------reading Using enumarator---------");
+		
+		Enumeration enm = v.elements();
+		while(enm.hasMoreElements()) {
+			System.out.println(enm.nextElement());
+		}
+		
+		
+		Collections.reverse(v);
+		System.out.println("-----------Reding vector after reverse-------");
+		
+		Enumeration enm1 = v.elements();
+		while(enm1.hasMoreElements()) {
+			System.out.println(enm1.nextElement());
+		}
+		
+		
+	}
+
+}
+
