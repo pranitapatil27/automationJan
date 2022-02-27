@@ -1,0 +1,50 @@
+ArrayList:
+package collection1;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.ListIterator;
+
+public class Test {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		ArrayList ar = new ArrayList();		
+		ar.add(2);
+		ar.add("java");
+		ar.add('A');
+		ar.add(2);
+		ar.add(null);		
+		System.out.println(ar.size());    //5
+		System.out.println(ar.isEmpty());  //false
+		
+		System.out.println("---------Different operation--------");
+		System.out.println(ar.indexOf(2));    //0
+		System.out.println(ar.lastIndexOf(2));  //3
+		
+		System.out.println(ar.contains("xyz"));  //false
+		
+		System.out.println(ar.get(2));      //A
+		System.out.println(ar);             //[2, java, A, 2, null]
+		
+		ar.add(3,"abc");
+		
+		System.out.println(ar); 
+		
+		ar.add(5,777);                  //[2, java, A, abc, 2, xyz, null]
+		
+		System.out.println(ar);        //[2, java, A, abc, 2, 777, null]
+		
+		ar.remove(5);
+		System.out.println(ar);    //[2, java, A, abc, 2, null]
+		
+		System.out.println("---------Read using iterator------");
+		
+			Iterator aaa = ar.iterator();
+			while(aaa.hasNext()) {
+				System.out.println(aaa.next());
+			}
+			
+	} 	
+
+}
